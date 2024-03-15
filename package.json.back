@@ -1,0 +1,94 @@
+{
+	"name": "docuo",
+	"displayName": "Docuo",
+	"description": "Building documents with MDX is more powerful and easier.",
+	"version": "0.0.1",
+	"publisher": "Docuo",
+	"private": true,
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/spreadingai/vscode-extension"
+	},
+	"engines": {
+		"vscode": "^1.73.0"
+	},
+	"categories": ["Programming Languages", "Snippets", "Formatters", "Notebooks"],
+	"keywords": ["MDX", "markdown", "ai", "keybindings", "documentation"],
+	"pricing": "Free",
+	"icon": "logo.png",
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "docuo.ai.code.codeToDoc",
+				"title": "Code to doc",
+				"category": "ai"
+			},
+			{
+				"command": "docuo.ai.code.enhanceCode",
+				"title": "Enhance Code",
+				"category": "ai"
+			},
+			{
+				"command": "docuo.ai.code.translateCode",
+				"title": "Translate code",
+				"category": "ai"
+			},
+			{
+				"command": "docuo.frontmatter",
+				"title": "Docuo Frontmatter",
+				"category": "navigation"
+			}
+		],
+		"submenus": [
+			{
+				"id": "docuo.ai.code",
+				"label": "Docuo AI"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"title": "Docuo Frontmatter",
+					"command": "docuo.frontmatter",
+					"when": "resourceLangId == markdown || resourceLangId == mdx",
+					"group": "navigation"
+				},
+				{
+					"submenu": "docuo.ai.code",
+					"when": "resourceLangId == markdown || resourceLangId == mdx",
+					"group": "navigation"
+				}
+			],
+			"docuo.ai.code": [
+				{
+					"command": "docuo.ai.code.codeToDoc"
+				},
+				{
+					"command": "docuo.ai.code.enhanceCode"
+				},
+				{
+					"command": "docuo.ai.code.translateCode"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint \"src/**/*.ts\"",
+		"watch": "tsc -watch -p ./"
+	},
+	"devDependencies": {
+		"@types/node": "^16.18.34",
+		"@types/vscode": "^1.73.0",
+		"@typescript-eslint/eslint-plugin": "^6.7.0",
+		"@typescript-eslint/parser": "^6.7.0",
+		"eslint": "^8.26.0",
+		"typescript": "^5.3.2"
+	}
+}
