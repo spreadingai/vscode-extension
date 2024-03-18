@@ -1,12 +1,17 @@
-# Completion Item Provider Sample
+Docuo is a lightweight platform that transforms your static contents into a modern developer hub, API reference, product guides, and more.
 
-This sample shows how to provide completions aka IntelliSense into the editor. The sample uses the `CompletionItemProvider` api.
+Using this tool can exert the most powerful function of Docuo.
 
-![Sample](demo.gif)
+- [Home](https://docuo.spreading.ai/via=vsce)
+- [Documentation](https://docuo.spreading.io/overview/introduction)
 
+## Trigger Suggest
 
-## VS Code API
+When you open MD and MDX documents, you can use the `Trigger Suggest` command to trigger the quick completion of Components provided by Docuo.
 
-### `vscode` module
-
-- [`languages.registerCompletionItemProvider`](https://code.visualstudio.com/api/references/vscode-api#languages.registerCompletionItemProvider)
+- Callout
+![note](images/note.gif)
+- Code block
+![code block](images/code-block.gif)
+- Image
+![image](images/image.gif)
